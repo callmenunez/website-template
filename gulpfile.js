@@ -11,10 +11,12 @@ var autoprefixer = require('gulp-autoprefixer');
 var autoPrefixBrowserList = ['last 2 version', 'safari 8', 'ie 9', 'opera 12.1', 'ios 8', 'android 4'];
 
 gulp.task('default', function() {
-  console.log("im a live baby")
+  console.log("im alive baby")
 });
 
 gulp.task('sass', function() {
+    console.log("im alive baby")
+
     return gulp.src('./scss/*.scss')
         .pipe(sass())
         .pipe(autoprefixer({
