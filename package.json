@@ -1,0 +1,31 @@
+{
+  "name": "website-template",
+  "version": "1.0.0",
+  "description": "Basic template to get started on projects with gulp",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-imagemin": "^4.1.0",
+    "tunnel-agent": "^0.6.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-inline-source": "^3.2.0",
+    "gulp-sass": "^4.0.1"
+  },
+  "scripts": {
+    "test": "testies"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callmenunez/website-template.git"
+  },
+  "author": "David Nunez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/callmenunez/website-template/issues"
+  },
+  "homepage": "https://github.com/callmenunez/website-template#readme"
+}
