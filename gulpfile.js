@@ -3,16 +3,16 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var babel = require('gulp-babel');
+// var uglify = require('gulp-uglify');
+// var concat = require('gulp-concat');
+// var babel = require('gulp-babel');
 var connect = require('gulp-connect-php');
 var inlinesource = require('gulp-inline-source');
-var plumber = require('gulp-plumber');
+// var plumber = require('gulp-plumber');
 var autoprefixer = require('gulp-autoprefixer');
-var gutil = require('gulp-util');
+// var gutil = require('gulp-util');
 
-var autoPrefixBrowserList = ['last 2 version', 'safari 8', 'ie 9', 'opera 12.1', 'ios 8', 'android 4'];
+// var autoPrefixBrowserList = ['last 2 version', 'safari 8', 'ie 9', 'opera 12.1', 'ios 8', 'android 4'];
 
 gulp.task('sass', function() {
     return gulp.src('./scss/*.scss')

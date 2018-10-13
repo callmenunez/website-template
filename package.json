@@ -1,35 +1,31 @@
 {
-  "name": "davidnunez.nyc",
-  "version": "0.0.1",
-  "description": "Base Project",
+  "name": "website-template",
+  "version": "1.0.0",
+  "description": "Basic template to get started on projects with gulp",
+  "main": "gulpfile.js",
   "dependencies": {
-    "lodash.update": "^4.10.2",
-    "npm": "^6.4.0"
+    "gulp-imagemin": "^4.1.0",
+    "tunnel-agent": "^0.6.0"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-es2015-node4": "^2.1.1",
-    "browser-sync": "^2.24.6",
-    "del": "^2.2.2",
+    "browser-sync": "^2.26.0",
     "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-clean-css": "^3.10.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect-php": "0.0.8",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-imagemin": "^4.1.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-connect-php": "^1.0.3",
     "gulp-inline-source": "^3.2.0",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sequence": "^0.4.6",
-    "gulp-shell": "^0.5.2",
-    "gulp-sourcemaps": "^2.4.1",
-    "gulp-static-hash": "^0.1.4",
-    "gulp-uglify": "^2.0.1",
-    "gulp-util": "^3.0.8",
-    "gulp-version-number": "^0.1.6",
-    "path": "^0.12.7"
-  }
+    "gulp-sass": "^4.0.1"
+  },
+  "scripts": {
+    "test": "testies"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callmenunez/website-template.git"
+  },
+  "author": "David Nunez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/callmenunez/website-template/issues"
+  },
+  "homepage": "https://github.com/callmenunez/website-template#readme"
 }
