@@ -1,32 +1,43 @@
 'use strict' ;
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync');
-var connect = require('gulp-connect-php');
-var inlinesource = require('gulp-inline-source');
-var autoprefixer = require('gulp-autoprefixer');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const browserSync = require('browser-sync');
+const connect = require('gulp-connect-php');
+const autoprefixer = require('gulp-autoprefixer');
+const uglify = require('gulp-uglify');
+const htmlmin = require('gulp-htmlmin');
 
-
-var autoPrefixBrowserList = ['last 2 version', 'safari 8', 'ie 9', 'opera 12.1', 'ios 8', 'android 4'];
-
-gulp.task('default', function() {
-  console.log("im alive baby")
-});
+// Set the browser that you want to support
+const autoprefixerBrowsers = [
+    'ie >= 10',
+    'ie_mob >= 10',
+    'ff >= 30',
+    'chrome >= 34',
+    'safari >= 7',
+    'opera >= 23',
+    'ios >= 7',
+    'android >= 4.4',
+    'bb >= 10'
+  ];
 
 gulp.task('sass', function() {
-    console.log("im alive baby")
-
     return gulp.src('./scss/*.scss')
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
-        }))
-        .pipe(gulp.dest('./css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+    }))
+    .pipe(autoprefixer({browsers: autoprefixerBrowsers}))
+    // Minify the file
+    .pipe(htmlmin({
+        collapseWhitespace: true,
+        removeComments: true
+      }))
+    .pipe(gulp.dest('./css'))
+    // .pipe(browserSync.reload({
+    //     stream: true
+    // }))
 });
 
 gulp.task('browserSync', function () {
@@ -41,27 +52,20 @@ gulp.task('browserSync', function () {
     });
 });
 
-// gulp.task('php', function () {
-//     return gulp.src('*.php')
-//         .pipe(plumber())
-//         .pipe(browserSync.reload({stream: true}))
-//         .on('error', gutil.log);
-// });
-
-gulp.task('inlinesource', function () {
-    const options = {
-        rootpath: path.resolve('')
-    }
-    return gulp.src(landingPages)
-        .pipe(inlinesource(options))
-        .pipe(gulp.dest('./'));
-});
-
 gulp.task('watch', ['browserSync', 'sass'], function() {
     gulp.watch('./scss/*.scss', ['sass']);
-    gulp.watch('**/*.php').on('change', function () {
-        browserSync.reload();
-    });
+    // gulp.watch('**/*.php').on('change', function () {
+    //     browserSync.reload();
+    // });
 });
 
-gulp.task('default', ['watch', 'sass', 'browserSync']);
+// Gulp task to minify JavaScript files
+gulp.task('scripts', function() {
+    return gulp.src('./es6/*.js')
+    // Minify the file
+    .pipe(uglify())
+    // Output
+    .pipe(gulp.dest('./js'))
+});
+
+gulp.task('default', ['browserSync', 'sass','scripts', 'watch']);
