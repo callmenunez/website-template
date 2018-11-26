@@ -35,9 +35,9 @@ gulp.task('sass', function() {
         removeComments: true
       }))
     .pipe(gulp.dest('./css'))
-    // .pipe(browserSync.reload({
-    //     stream: true
-    // }))
+    .pipe(browserSync.reload({
+        stream: true
+    }))
 });
 
 gulp.task('browserSync', function () {
@@ -54,9 +54,9 @@ gulp.task('browserSync', function () {
 
 gulp.task('watch', ['browserSync', 'sass'], function() {
     gulp.watch('./scss/*.scss', ['sass']);
-    // gulp.watch('**/*.php').on('change', function () {
-    //     browserSync.reload();
-    // });
+    gulp.watch('**/*.php').on('change', function () {
+        browserSync.reload();
+    });
 });
 
 // Gulp task to minify JavaScript files
