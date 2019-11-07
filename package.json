@@ -1,5 +1,5 @@
 {
-  "name": "website-template",
+  "name": "beta-page",
   "version": "1.0.0",
   "description": "Basic template to get started on projects with gulp",
   "main": "gulpfile.js",
@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/callmenunez/website-template.git"
+    "url": "git+https://github.com/callmenunez/beta-page.git"
   },
   "author": "David Nunez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/callmenunez/website-template/issues"
+    "url": "https://github.com/callmenunez/beta-page/issues"
   },
-  "homepage": "https://github.com/callmenunez/website-template#readme"
+  "homepage": "https://github.com/callmenunez/beta-page#readme"
 }
